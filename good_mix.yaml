@@ -87,17 +87,17 @@ pin_sequence:
 
 flow_setpoints_sequence:
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
       sccm: 800
     - port: COM5
@@ -111,65 +111,65 @@ flow_setpoints_sequence:
     - port: COM5
       sccm: 800
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
       sccm: 800
     - port: COM5
@@ -183,14 +183,14 @@ flow_setpoints_sequence:
     - port: COM5
       sccm: 800
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
-      sccm: 200
-    - port: COM5
       sccm: 1400
+    - port: COM5
+      sccm: 200
