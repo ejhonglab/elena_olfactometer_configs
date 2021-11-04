@@ -35,18 +35,6 @@ pins2odors:
   49:
     name: a-pinene
     log10_conc: -2.6
-  40:
-    name: pentyl acetate
-    log10_conc: -2.6
-  39:
-    name: 2-heptanone
-    log10_conc: -2.6
-  38:
-    name: p-cresol
-    log10_conc: -2.6
-  37:
-    name: mix
-    log10_conc: 0
 
 pin_sequence:
   # The rows in this bulleted list happen one after the other.
@@ -57,18 +45,47 @@ pin_sequence:
   # The pins listed in each of these rows will all be concurrently 
   # switched ONCE (LOW for pre_pulse_us -> HIGH for pulse_us ->
   # LOW for post_pulse_us)
-  - pins: [37,50]
-  - pins: [37,50]
-  - pins: [37,50]
-  - pins: [40,39,38,46,50]
-  - pins: [40,39,38,46,50]
-  - pins: [40,39,38,46,50]
-  - pins: [37,50]
-  - pins: [37,50]
-  - pins: [37,50]
+  - pins: [46,47,48,49,50]
+  - pins: [46,47,48,49,50]
+  - pins: [46,47,48,49,50]
+  - pins: [45,50]
+  - pins: [45,50]
+  - pins: [45,50]
+  - pins: [46,50]
+  - pins: [46,50]
+  - pins: [46,50]
+  - pins: [47,50]
+  - pins: [47,50]
+  - pins: [47,50]
+  - pins: [48,50]
+  - pins: [48,50]
+  - pins: [48,50]
+  - pins: [49,50]
+  - pins: [49,50]
+  - pins: [49,50]
 
 flow_setpoints_sequence:
   - - port: COM19
+      sccm: 800
+    - port: COM5
+      sccm: 800
+  - - port: COM19
+      sccm: 800
+    - port: COM5
+      sccm: 800
+  - - port: COM19
+      sccm: 800
+    - port: COM5
+      sccm: 800
+  - - port: COM19
+      sccm: 1400
+    - port: COM5
+      sccm: 200
+  - - port: COM19
+      sccm: 1400
+    - port: COM5
+      sccm: 200
+  - - port: COM19
       sccm: 1400
     - port: COM5
       sccm: 200
@@ -81,17 +98,33 @@ flow_setpoints_sequence:
     - port: COM5
       sccm: 200
   - - port: COM19
-      sccm: 800
+      sccm: 1400
     - port: COM5
-      sccm: 800
+      sccm: 200
   - - port: COM19
-      sccm: 800
+      sccm: 1400
     - port: COM5
-      sccm: 800
+      sccm: 200
   - - port: COM19
-      sccm: 800
+      sccm: 1400
     - port: COM5
-      sccm: 800
+      sccm: 200
+  - - port: COM19
+      sccm: 1400
+    - port: COM5
+      sccm: 200
+  - - port: COM19
+      sccm: 1400
+    - port: COM5
+      sccm: 200
+  - - port: COM19
+      sccm: 1400
+    - port: COM5
+      sccm: 200
+  - - port: COM19
+      sccm: 1400
+    - port: COM5
+      sccm: 200
   - - port: COM19
       sccm: 1400
     - port: COM5
