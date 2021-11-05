@@ -1,4 +1,4 @@
-generator: ./basic_v2.py
+generator: ./basic.py
 pre_pulse_s: 5
 pulse_s: 1
 post_pulse_s: 14
