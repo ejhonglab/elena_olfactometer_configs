@@ -1,0 +1,40 @@
+generator: ./basic_v2.py
+pre_pulse_s: 5
+pulse_s: 1
+post_pulse_s: 14
+n_repeats: 3
+
+leave_1_out: True
+control_first: True
+
+odors:
+ - name: ethyl acetate
+   log10_conc: -3
+   type: control
+ - name: butyric acid
+   log10_conc: -2
+   type: control
+ - name: benzaldehyde
+   log10_conc: -2.5
+   type: control
+ - name: cis-3-hexen-1-ol
+   log10_conc: -2
+   type: control
+ - name: 3-(methylthio)-1-propanol
+   log10_conc: -2.5
+   type: control
+ - name: acetoin
+   log10_conc: -2.17
+   type: flyfood
+ - name: ethanol
+   log10_conc: -3.3
+   type: flyfood
+ - name: acetic acid
+   log10_conc: -1.99
+   type: flyfood
+ - name: isobutyric acid
+   log10_conc: -3.7
+   type: flyfood
+ - name: propionic acid
+   log10_conc: -1.9
+   type: flyfood
