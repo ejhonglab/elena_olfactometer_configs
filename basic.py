@@ -46,8 +46,18 @@ import itertools
 
 from olfactometer.generators import common
 
-def add_flow_sequence(pinlist_at_each_trial, generated_config_dict) -> None:
-    generated_config_dict['flow_setpoints_sequence'] = [[{'port': 'COM19', 'sccm': 2000-len(pins)*200}, {'port': 'COM5', 'sccm': len(pins)*200}] for pins in pinlist_at_each_trial]
+
+def add_flow_sequence(pinlist_at_each_trial, generated_config_dict, flyfood_pin) -> None:
+    flow_setpoints = []
+    for pins in pinlist_at_each_trial:
+        if set(pins) in flyfood_pin:
+            flow_setpoints.append(
+                [{'port': 'COM19', 'sccm': 2000 - len(pins) * 200}, {'port': 'COM5', 'sccm': len(pins) * 200}])
+        else:
+            flow_setpoints.append(
+                [{'port': 'COM19', 'sccm': 2000 - len(pins) * 100}, {'port': 'COM5', 'sccm': len(pins) * 100}])
+    generated_config_dict['flow_setpoints_sequence'] = flow_setpoints
+
 
 def make_config_dict(generator_config_yaml_dict):
     # TODO doc the minimum expected keys of the YAML
@@ -87,9 +97,10 @@ def make_config_dict(generator_config_yaml_dict):
       - 'n_repeats' (optional, defaults to 1)
 
     """
-    
+
     data = generator_config_yaml_dict
-    import ipdb; ipdb.set_trace()
+    import ipdb;
+    ipdb.set_trace()
     generated_config_dict = common.parse_common_settings(data)
 
     available_valve_pins, pins2balances, single_manifold = \
@@ -113,7 +124,7 @@ def make_config_dict(generator_config_yaml_dict):
     # want), because sort_keys=True default also re-orders some other things i
     # don't want it to
     pins2odors = {p: o for p, o in zip(odor_pins, odors)}
-    
+
     control_pin = [i for i in pins2odors.keys() if pins2odors[i]['type'] == 'control']
     flyfood_pin = [i for i in pins2odors.keys() if pins2odors[i]['type'] == 'flyfood']
 
@@ -124,8 +135,8 @@ def make_config_dict(generator_config_yaml_dict):
     else:
         if len(odors) > 1:
             warnings.warn(f'defaulting to {randomize_presentation_order_key}'
-                '=True, since not specified in config'
-            )
+                          '=True, since not specified in config'
+                          )
             randomize_presentation_order = True
         else:
             assert len(odors) == 1
@@ -139,8 +150,8 @@ def make_config_dict(generator_config_yaml_dict):
         # presentations of a particular odor should be kept together
         if randomize_presentation_order:
             warnings.warn('current implementation only randomizes across odors,'
-                ' keeping presentations of any given odor together'
-            )
+                          ' keeping presentations of any given odor together'
+                          )
     else:
         n_repeats = 1
 
@@ -148,26 +159,26 @@ def make_config_dict(generator_config_yaml_dict):
     control_ind = [[p] for p in odor_pins if p in control_pin]
     flyfood_leave1 = []
     control_leave1 = []
-    
+
     if data['leave_1_out'] == True:
         flyfood_leave1 = [list(subset) for subset in itertools.combinations(flyfood_pin, 4)]
         control_leave1 = [list(subset) for subset in itertools.combinations(control_pin, 4)]
     trial_pins3 = flyfood_leave1 + control_leave1
-            
+
     if data['control_first'] == True:
         trial_pins = control_ind + [control_pin] + [flyfood_pin]
         trial_pins2 = flyfood_ind
     else:
         trial_pins = flyfood_ind + [flyfood_pin] + [control_pin]
         trial_pins2 = control_ind
-    
+
     if randomize_presentation_order:
         # This re-orders odor_pins in-place (it modifies it, rather than
         # returning something modified).
         random.shuffle(trial_pins)
         random.shuffle(trial_pins2)
         random.shuffle(trial_pins3)
-    
+
     trial_pins = trial_pins + trial_pins2 + trial_pins3
 
     # TODO worth factoring this into a fn in common for expanding to # of
@@ -180,7 +191,6 @@ def make_config_dict(generator_config_yaml_dict):
 
     generated_config_dict['pins2odors'] = pins2odors
     common.add_pinlist(pinlist_at_each_trial, generated_config_dict)
-    # add_flow_sequence(pinlist_at_each_trial, generated_config_dict)
+    # add_flow_sequence(pinlist_at_each_trial, generated_config_dict, flyfood_pin)
     ipdb.set_trace()
     return generated_config_dict
-
