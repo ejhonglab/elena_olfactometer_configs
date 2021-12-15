@@ -55,7 +55,7 @@ def add_flow_sequence(pinlist_at_each_trial, generated_config_dict, flyfood_pin)
                 [{'port': 'COM19', 'sccm': 2000 - len(pins) * 200}, {'port': 'COM5', 'sccm': len(pins) * 200}])
         else:
             flow_setpoints.append(
-                [{'port': 'COM19', 'sccm': 2000 - len(pins) * 100}, {'port': 'COM5', 'sccm': len(pins) * 100}])
+                [{'port': 'COM19', 'sccm': 2000 - len(pins) * 200}, {'port': 'COM5', 'sccm': len(pins) * 200}])
     generated_config_dict['flow_setpoints_sequence'] = flow_setpoints
 
 
