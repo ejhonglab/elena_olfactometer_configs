@@ -11,7 +11,8 @@ https://github.com/tom-f-oconnell/olfactometer
 olf -u test.yaml -r single_manifold2
 ```
 This will generate a config using basic.py. Run without `-u` if you don't have to re-upload the code.
-- For a full description of the AL imaging protocol, see https://github.com/tom-f-oconnell/tom_olfactometer_configs
+- For a full description of the AL imaging protocol, see https://github.com/tom-f-oconnell/tom_olfactometer_configs.
+- `elenavalvetest` is for testing whether the fly is responding before running the whole experiment.
 ### Plotting
 In command prompt, change directory to the folder that contains `SyncData00x` and run
 ```
