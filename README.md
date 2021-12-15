@@ -1,5 +1,5 @@
 ### Installation
-Follow [this link](https://github.com/tom-f-oconnell/olfactometer).
+Follow instructions on [this page](https://github.com/tom-f-oconnell/olfactometer).
 ### AL Imaging
 - Switch the tubes between the two manifolds, switch back after experiment.
 - Turn on the flow controllers connected to COM5 and COM19 (top and right ones). 
