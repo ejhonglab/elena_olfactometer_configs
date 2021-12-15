@@ -20,9 +20,21 @@ settings:
   recording_indicator_pin: 36
 
 pins2odors:
-  37:
-    name: fly food mix in vial
-    log10_conc: 0
+  38:
+    name: ethyl acetate
+    log10_conc: -3
+  39:
+    name: butyric acid
+    log10_conc: -2
+  40:
+    name: benzaldehyde
+    log10_conc: -2.5
+  41:
+    name: cis-3-hexen-1-ol
+    log10_conc: -2
+  42:
+    name: 3-(methylthio)-1-propanol
+    log10_conc: -2.5
   45:
     name: acetoin
     log10_conc: -2.17
@@ -49,9 +61,6 @@ pin_sequence:
   # The pins listed in each of these rows will all be concurrently 
   # switched ONCE (LOW for pre_pulse_us -> HIGH for pulse_us ->
   # LOW for post_pulse_us)
-  - pins: [37,50]
-  - pins: [37,50]
-  - pins: [37,50]
   - pins: [45,50]
   - pins: [45,50]
   - pins: [45,50]
@@ -70,6 +79,24 @@ pin_sequence:
   - pins: [45,46,47,48,49,50]
   - pins: [45,46,47,48,49,50]
   - pins: [45,46,47,48,49,50]
+  - pins: [38,50]
+  - pins: [38,50]
+  - pins: [38,50]
+  - pins: [39,50]
+  - pins: [39,50]
+  - pins: [39,50]
+  - pins: [40,50]
+  - pins: [40,50]
+  - pins: [40,50]
+  - pins: [41,50]
+  - pins: [41,50]
+  - pins: [41,50]
+  - pins: [42,50]
+  - pins: [42,50]
+  - pins: [42,50]
+  - pins: [38,39,40,41,42,50]
+  - pins: [38,39,40,41,42,50]
+  - pins: [38,39,40,41,42,50]
 
 flow_setpoints_sequence:
   - - port: COM19
@@ -148,6 +175,31 @@ flow_setpoints_sequence:
       sccm: 200
 
   - - port: COM19
+      sccm: 1000
+    - port: COM5
+      sccm: 1000
+
+  - - port: COM19
+      sccm: 1000
+    - port: COM5
+      sccm: 1000
+
+  - - port: COM19
+      sccm: 1000
+    - port: COM5
+      sccm: 1000
+
+  - - port: COM19
+      sccm: 1800
+    - port: COM5
+      sccm: 200
+
+  - - port: COM19
+      sccm: 1800
+    - port: COM5
+      sccm: 200
+
+  - - port: COM19
       sccm: 1800
     - port: COM5
       sccm: 200
@@ -163,9 +215,54 @@ flow_setpoints_sequence:
       sccm: 200
 
   - - port: COM19
-      sccm: 1000
+      sccm: 1800
     - port: COM5
-      sccm: 1000
+      sccm: 200
+
+  - - port: COM19
+      sccm: 1800
+    - port: COM5
+      sccm: 200
+
+  - - port: COM19
+      sccm: 1800
+    - port: COM5
+      sccm: 200
+
+  - - port: COM19
+      sccm: 1800
+    - port: COM5
+      sccm: 200
+
+  - - port: COM19
+      sccm: 1800
+    - port: COM5
+      sccm: 200
+
+  - - port: COM19
+      sccm: 1800
+    - port: COM5
+      sccm: 200
+
+  - - port: COM19
+      sccm: 1800
+    - port: COM5
+      sccm: 200
+
+  - - port: COM19
+      sccm: 1800
+    - port: COM5
+      sccm: 200
+
+  - - port: COM19
+      sccm: 1800
+    - port: COM5
+      sccm: 200
+
+  - - port: COM19
+      sccm: 1800
+    - port: COM5
+      sccm: 200
 
   - - port: COM19
       sccm: 1000
@@ -177,4 +274,7 @@ flow_setpoints_sequence:
     - port: COM5
       sccm: 1000
 
-
+  - - port: COM19
+      sccm: 1000
+    - port: COM5
+      sccm: 1000
