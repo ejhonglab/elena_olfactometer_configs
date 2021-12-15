@@ -1,3 +1,4 @@
+// copied from Emily's code
 const int olfPin =45;
 const int dispPin = 34;
 //9=co2 valve
