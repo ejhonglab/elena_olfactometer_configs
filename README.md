@@ -8,7 +8,8 @@
 ```
 olf -u test.yaml -r single_manifold2
 ```
-- For a full description of the AL imaging protocol, see https://github.com/tom-f-oconnell/tom_olfactometer_configs
+- For a full description of the AL imaging protocol, see 
+  https://github.com/tom-f-oconnell/tom_olfactometer_configs
 ### Plot data
 In command prompt, change directory to the folder that contains `SyncData00x` and run
 ```
