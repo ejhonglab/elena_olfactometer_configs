@@ -1,3 +1,5 @@
+### Installation
+https://github.com/tom-f-oconnell/olfactometer
 ### Running
 - Switch the tubes between two manifolds, switch back after experiment.
 - Turn on the flow controllers connected to COM5 and COM19 (top and right ones). 
