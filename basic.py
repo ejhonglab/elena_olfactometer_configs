@@ -50,7 +50,7 @@ from olfactometer.generators import common
 def add_flow_sequence(pinlist_at_each_trial, generated_config_dict, flyfood_pin) -> None:
     flow_setpoints = []
     for pins in pinlist_at_each_trial:
-        if set(pins) in flyfood_pin:
+        if set(pins) <= set(flyfood_pin):
             flow_setpoints.append(
                 [{'port': 'COM19', 'sccm': 2000 - len(pins) * 200}, {'port': 'COM5', 'sccm': len(pins) * 200}])
         else:
@@ -99,9 +99,8 @@ def make_config_dict(generator_config_yaml_dict):
     """
 
     data = generator_config_yaml_dict
-    import ipdb;
-    ipdb.set_trace()
     generated_config_dict = common.parse_common_settings(data)
+    # import ipdb; ipdb.set_trace()
 
     available_valve_pins, pins2balances, single_manifold = \
         common.get_available_pins(data, generated_config_dict)
@@ -191,6 +190,6 @@ def make_config_dict(generator_config_yaml_dict):
 
     generated_config_dict['pins2odors'] = pins2odors
     common.add_pinlist(pinlist_at_each_trial, generated_config_dict)
-    # add_flow_sequence(pinlist_at_each_trial, generated_config_dict, flyfood_pin)
-    ipdb.set_trace()
+    add_flow_sequence(pinlist_at_each_trial, generated_config_dict, flyfood_pin)
+    # ipdb.set_trace()
     return generated_config_dict
