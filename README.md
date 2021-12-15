@@ -1,5 +1,5 @@
 ### Installation
-https://github.com/tom-f-oconnell/olfactometer
+Follow [this link](https://github.com/tom-f-oconnell/olfactometer).
 ### AL Imaging
 - Switch the tubes between the two manifolds, switch back after experiment.
 - Turn on the flow controllers connected to COM5 and COM19 (top and right ones). 
@@ -11,7 +11,7 @@ https://github.com/tom-f-oconnell/olfactometer
 olf -u test.yaml -r single_manifold2
 ```
 This will generate a config using `basic.py`. Run without `-u` if you don't have to re-upload the code.
-- For a full description of the AL imaging protocol, see https://github.com/tom-f-oconnell/tom_olfactometer_configs.
+- For a full description of the AL imaging protocol, see [this page](https://github.com/tom-f-oconnell/tom_olfactometer_configs).
 - `elenavalvetest` is for testing whether the fly is responding before running the whole experiment.
 ### Plotting
 In command prompt, change directory to the folder that contains `SyncData00x` and run
