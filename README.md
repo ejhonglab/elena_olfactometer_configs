@@ -10,9 +10,10 @@ Follow instructions on [this page](https://github.com/tom-f-oconnell/olfactomete
 ```
 olf -u test.yaml -r single_manifold2
 ```
-This will generate a config using `basic.py`. Run without `-u` if you don't have to re-upload the code.
+This will generate a `.yaml` file using `basic.py`. Run without `-u` if you don't have to re-upload the code.
 - For a full description of the AL imaging protocol, see [this page](https://github.com/tom-f-oconnell/tom_olfactometer_configs).
 - `elenavalvetest` is for testing whether the fly is responding before running the whole experiment.
+- After the experiment is done, copy the generated `.yaml` file to the directory with the ThorSync / ThorImage outputs.
 ### Plotting
 In command prompt, change directory to the folder that contains `SyncData00x` and run
 ```
