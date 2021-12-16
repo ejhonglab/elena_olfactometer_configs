@@ -50,6 +50,7 @@ from olfactometer.generators import common
 def add_flow_sequence(pinlist_at_each_trial, generated_config_dict, flyfood_pin) -> None:
     flow_setpoints = []
     for pins in pinlist_at_each_trial:
+    # control and flyfood odors are assigned separately in case we want a different flow rate for different odor type
         if set(pins) <= set(flyfood_pin):
             flow_setpoints.append(
                 [{'port': 'COM19', 'sccm': 2000 - len(pins) * 200}, {'port': 'COM5', 'sccm': len(pins) * 200}])
@@ -178,6 +179,7 @@ def make_config_dict(generator_config_yaml_dict):
         random.shuffle(trial_pins2)
         random.shuffle(trial_pins3)
 
+    # Presentation order within control components, flyfood components, and incomplete mixtures is randomized. Didn't randomized across the whole experiment in case the fly dies during the experiment.
     trial_pins = trial_pins + trial_pins2 + trial_pins3
 
     # TODO worth factoring this into a fn in common for expanding to # of
